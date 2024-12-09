@@ -1,0 +1,17 @@
+.gallery {
+    text-align: center;
+    font-size: 20px;
+    padding: 50px;
+    background-color: #e5e5e5;
+  }
+  
+  .gallery-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .gallery-logos img {
+    height: 300px;
+  }
+  

@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a3d;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: 0%;
+    margin: 0%;
+    width: 10%;
+    border-radius: 60%;
+  }
+
+  .header-text {
+    max-width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .btn {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .btn.donate {
+    background-color: #2e2e62;
+    color: #ffffff;
+  }
+  .navbtn ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbtn ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Set navigation links color to white */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .navbtn ul li a:hover {
+    color: #daf458; /* Optional: Highlight color on hover */
+  }  
+ 
