@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import the CSS file
+import { useNavigate, useLocation } from 'react-router-dom';
+import './Login.css';
 
 const LoginPage = () => {
-  const [isSignUp, setIsSignUp] = useState(false); // State to toggle between Sign Up and Sign In
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Simple login simulation (replace with your backend logic)
+    if (email === 'user@example.com' && password === 'password') {
+      localStorage.setItem('isLoggedIn', 'true');
+
+      // Redirect to the intended page (default: '/')
+      const redirectTo = location.state?.from?.pathname || '/';
+      navigate(redirectTo);
+    } else {
+      alert('Invalid credentials. Please try again.');
+    }
   };
 
   return (
@@ -21,13 +41,23 @@ const LoginPage = () => {
         </form>
       </div>
       <div className="form-container sign-in">
-        <form>
+        <form onSubmit={handleLogin}>
           <h1>Sign In</h1>
           <p>or use your email and password</p>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <a href="#">Forget Your Password?</a>
-          <button>Sign In</button>
+          <button type="submit">Sign In</button>
         </form>
       </div>
       <div className="toggle-container">
